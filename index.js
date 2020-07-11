@@ -8,6 +8,7 @@ const con = mongoose.connection
 con.on('open', () => {
     console.log("Connected...!")
 })
+app.use(express.json())
 const alienRouter = require('./routes/aliens')
 app.use('/aliens', alienRouter)
 app.listen(9000, () => {
